@@ -1,7 +1,13 @@
 
-.stroked-text {
-    -webkit-text-stroke: 1px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
-    color: white; /* สีข้อความภายใน */
-    font-size: 36px; /* ขนาดตัวอักษร */
-    font-weight: bold; /* ความหนาของตัวอักษร */
+.stroked {
+    -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
   }
+
+.myfont {
+  font-family: "Libre Baskerville", serif;
+}
+
+.myDiv {
+  font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
+  transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
+}

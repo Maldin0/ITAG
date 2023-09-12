@@ -12,41 +12,38 @@ const containerStyle = {
   borderRight: '250px solid black', // ขอบด้านขวาสีดำ
 };
 
+const BgStyle = {
+  backgroundImage: `url(${backgroundImage})`, // ใช้รูปภาพเป็นพื้นหลัง
+  backgroundSize: 'cover', // ปรับขนาดรูปให้ครอบคลุมพื้นที่
+  backgroundPosition: 'center', // ตำแหน่งรูปภาพในหน้าเว็บ (ในกรณีนี้จะกลาง)
+  width: '100%',
+  height: '100vh', // ความสูงเต็มหน้าจอ
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
 
-const ProjName = () => (
-  
-  <div style={{position: 'absolute',top: '17%', left: '21%'}}>
-    <div style={{textAlign: 'center'}}>
-      <h1 style={{ marginLeft: '-7%', fontSize: '70px'}}>
-        IT<br/>
-        ADVENTURER<br />
-        guild
-      </h1>
-    </div>
-  </div>
-);
 
 function Home() {
-  /*const containerStyle = {
-    backgroundImage: `url(${backgroundImage})`, // ใช้รูปภาพเป็นพื้นหลัง
-    backgroundSize: 'cover', // ปรับขนาดรูปให้ครอบคลุมพื้นที่
-    backgroundPosition: 'center', // ตำแหน่งรูปภาพในหน้าเว็บ (ในกรณีนี้จะกลาง)
-    width: '100%',
-    height: '100vh', // ความสูงเต็มหน้าจอ
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-   };*/
-
+  const combinedClassName = [Homestyle.stroked, Homestyle.myfont].join(' '); //ใช้กับตัวอักษรที่ใช้ Stroke กับ font เหมือนกัน
 
   return (
-    <div style={containerStyle}>
-      <ProjName/>
-      <div style={{position: 'absolute',top: '35%', right:'18%'}}>
-        <h1 style={{ marginLeft: '-7%',fontSize: '70px'}}>Roll Your Dice</h1>
-      </div>
 
-    </div>
+      <div style={BgStyle}>
+        <div style={{position: 'absolute',top: '0%', left: '20%'}}>
+          <div className={Homestyle.myDiv} style={{textAlign: 'center'}}>
+            <h1 className={combinedClassName} style={{ marginLeft: '-110%',color: 'white'}}>
+              IT<br/>
+              ADVENTURER<br />
+              GUILD
+            </h1>
+         </div>
+        </div>
+
+        <div className={Homestyle.myDiv} style={{position: 'absolute',top: '25%', right:'1%'}}>
+          <h1 className={combinedClassName} style={{ marginLeft: '-7%',color: 'white'}}>Roll Your Dice</h1>
+        </div>
+      </div>
   );
 }
 
