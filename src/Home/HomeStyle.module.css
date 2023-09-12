@@ -1,3 +1,8 @@
+body {
+    background-image: url("/src/Home/Images/village01.png");
+    background-color: #cccccc;
+    margin: 0px;
+}
 
 .stroked {
     -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
@@ -10,4 +15,42 @@
 .myDiv {
   font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
   transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
+}
+
+.Menu {
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Menu-Right div {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.Menu-Right {
+    display: flex;
+    align-items: center;
+}
+
+.Menu-Right > * {
+    margin: 10px;
+}
+
+.Menu-Left_icon {
+    width: 60px;
+    align-items: center;
+}
+
+.SignIn, .LogIn {
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 5px 10px 5px 10px;
+}
+
+.SignIn {
+    background-color: black;
+    color: white;
 }
