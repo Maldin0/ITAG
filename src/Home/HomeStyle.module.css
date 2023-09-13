@@ -1,5 +1,5 @@
-.backgroundImage {
-  position: sticky; /* ทำให้รูปพื้นหลังคงที่และไม่เลื่อนไปด้วย */
+.villageImageOne {
+  position: sticky; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
   background-image: url('./Images/village01.png'); /* กำหนดภาพพื้นหลัง */
@@ -7,7 +7,7 @@
   background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
   z-index: 0; /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้รูปพื้นหลังอยู่ข้างหลังสุด */
-  background-color: black;
+  
 }
 
 

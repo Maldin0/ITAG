@@ -6,14 +6,14 @@ function Home() {
   const combinedClassName = [Homestyle.stroked, Homestyle.myfont].join(' '); //ใช้กับตัวอักษรที่ใช้ Stroke กับ font เหมือนกัน
 
   return (
-    <div className={Homestyle.scroll}>
-      <div className={Homestyle.backgroundImage}>
+    <div className={Homestyle.scroll}> {/*ปรับให้หน้า Home มี scroll bar ให้ทำโค้ดภายใน div นี้*/}
+      <div className={Homestyle.villageImageOne}> {/*ใส่รูป*/}
 
-        <div style={{position: 'absolute',top: '0%', left: '20%'}}>
+        <div style={{position: 'absolute',top: '0%', left: '20%'}}> 
           <div className={Homestyle.myDiv} style={{textAlign: 'center'}}>
             <h1 className={combinedClassName} style={{ marginLeft: '-110%',color: 'white'}}>
               IT<br/>
-              ADVENTURER<br />
+              ADVENTURER<br/>
               GUILD
             </h1>
          </div>
