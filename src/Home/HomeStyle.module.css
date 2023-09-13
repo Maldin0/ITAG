@@ -12,9 +12,22 @@
   
 }
 
+.Rollnow {
+  position: sticky; /* ทำให้รูปพื้นหลังคงที่ */
+  width: 20%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 20%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('./Images/RollNowBorder.png'); /* กำหนดภาพพื้นหลัง */
+  
+  background-size: cover;
+  z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
+  
+}
 
 
-.myfont {
+.font{
+  font-family: "Libre Baskerville", serif;
+}
+.mainfont {
   font-family: "Libre Baskerville", serif;
   -webkit-text-stroke: 4px black;
   color: white;
