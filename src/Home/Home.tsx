@@ -3,24 +3,22 @@ import logo from '/logo.svg';
 import Homestyle from './HomeStyle.module.css';
 
 function Home() {
-  const combinedClassName = [Homestyle.stroked, Homestyle.myfont].join(' '); //ใช้กับตัวอักษรที่ใช้ Stroke กับ font เหมือนกัน
+  const combinedClassName = [Homestyle.stroked, Homestyle.myDiv].join(' '); //ใช้กับตัวอักษรที่ใช้ Stroke กับ font เหมือนกัน
 
   return (
     <div className={Homestyle.scroll}> {/*ปรับให้หน้า Home มี scroll bar ให้ทำโค้ดภายใน div นี้*/}
       <div className={Homestyle.villageImageOne}> {/*ใส่รูป*/}
 
-        <div style={{position: 'absolute',top: '0%', left: '20%'}}> 
-          <div className={Homestyle.myDiv} style={{textAlign: 'center'}}>
-            <h1 className={combinedClassName} style={{ marginLeft: '-110%',color: 'white'}}>
+        <div style={{display: 'flex' ,textAlign: 'center'}}> 
+            <h1 className={Homestyle.myfont} style={{ marginTop: '0%',marginLeft: '-6%'}}>
               IT<br/>
               ADVENTURER<br/>
               GUILD
             </h1>
-         </div>
         </div>
 
-        <div className={Homestyle.myDiv} style={{position: 'absolute',top: '25%', right:'1%'}}>
-          <h1 className={combinedClassName} style={{ marginLeft: '-7%',color: 'white'}}>Roll Your Dice</h1>
+        <div style={{display: 'flex'}}>
+          <h1 className={Homestyle.myfont} style={{ marginLeft: '46%',marginTop: '-20%',color: 'white' ,whiteSpace: 'nowrap'}}>Roll your Dice</h1>
         </div>
 
       </div>

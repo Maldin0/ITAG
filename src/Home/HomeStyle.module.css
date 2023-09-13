@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
+
 .villageImageOne {
   position: sticky; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
@@ -6,47 +8,47 @@
   background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
   background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
-  z-index: 0; /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้รูปพื้นหลังอยู่ข้างหลังสุด */
+  z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
   
 }
 
 
-.stroked {
-    -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
-  }
 
 .myfont {
   font-family: "Libre Baskerville", serif;
+  -webkit-text-stroke: 4px black;
+  color: white;
+  font-size: 150px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
+  transform: scale(0.5); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
 }
 
-.myDiv {
-  font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
-  transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
-}
 
 .scroll{
   height: 100vh; /* กำหนดความสูงเท่ากับความสูงของหน้าจอ */
   overflow-y: scroll; /* เปิดการใช้งานการเลื่อนแนวตั้งเมื่อเนื้อหามากเกิน */
   box-sizing: border-box;
   background-color: black;
+  z-index: 0 /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้สีพื้นหลังอยู่ข้างหลังสุด */;
+  size: cover; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
 }
 body {
   background-image: url("/src/Home/Images/village01.png");
   background-color: #cccccc;
-  margin: 0px;
+  
 }
 
 .stroked {
   -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
+  -webkit-text-fill-color: white;
 }
 
 .myfont {
-font-family: "Libre Baskerville", serif;
+  font-family: "Libre Baskerville",serif;
 }
 
-.myDiv {
-font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
-transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
+.myDiv /*ปรับขนาดฟ้อนโดยปรับที่ scale ฟ้อนจะได้ไม่โดนบีบ*/{
+font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 70% ของขนาดปกติ */
+transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 60% ของขนาดปกติ */
 }
 
 
