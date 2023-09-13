@@ -1,16 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '/logo.svg';
 import Homestyle from './HomeStyle.module.css';
-
-const containerStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh', // ความสูงเต็มหน้าจอ
-  borderLeft: '250px solid black', // ขอบด้านซ้ายสีดำ
-  borderRight: '250px solid black', // ขอบด้านขวาสีดำ
-};
-
 
 function Home() {
   const combinedClassName = [Homestyle.stroked, Homestyle.myfont].join(' '); //ใช้กับตัวอักษรที่ใช้ Stroke กับ font เหมือนกัน
