@@ -1,8 +1,15 @@
-body {
-    background-image: url("/src/Home/Images/village01.png");
-    background-color: #cccccc;
-    margin: 0px;
+.backgroundImage {
+  position: sticky; /* ทำให้รูปพื้นหลังคงที่และไม่เลื่อนไปด้วย */
+  width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('./Images/village01.png'); /* กำหนดภาพพื้นหลัง */
+  background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
+  background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
+  background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
+  z-index: 0; /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้รูปพื้นหลังอยู่ข้างหลังสุด */
+  background-color: black;
 }
+
 
 .stroked {
     -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
@@ -16,6 +23,32 @@ body {
   font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
   transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
 }
+
+.scroll{
+  height: 100vh; /* กำหนดความสูงเท่ากับความสูงของหน้าจอ */
+  overflow-y: scroll; /* เปิดการใช้งานการเลื่อนแนวตั้งเมื่อเนื้อหามากเกิน */
+  box-sizing: border-box;
+  background-color: black;
+}
+body {
+  background-image: url("/src/Home/Images/village01.png");
+  background-color: #cccccc;
+  margin: 0px;
+}
+
+.stroked {
+  -webkit-text-stroke: 3px black; /* เส้นขอบสีดำขนาด 1px สำหรับเบราว์เซอร์ที่ใช้ WebKit (เช่น Chrome, Safari) */
+}
+
+.myfont {
+font-family: "Libre Baskerville", serif;
+}
+
+.myDiv {
+font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
+transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
+}
+
 
 .Menu {
     padding: 10px;
