@@ -13,7 +13,7 @@ function Home() {
           <div className={Homestyle.myDiv} style={{textAlign: 'center'}}>
             <h1 className={combinedClassName} style={{ marginLeft: '-110%',color: 'white'}}>
               IT<br/>
-              ADVENTURER<br />
+              ADVENTURERr<br />
               GUILD
             </h1>
          </div>
