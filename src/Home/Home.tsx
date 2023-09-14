@@ -24,7 +24,7 @@ function Home() {
               Roll your Dice
           </h1>
 
-          <div className={Homestyle.Rollnow}style={{marginLeft: '65vw',marginTop: '40vh',transform: 'scale(${scale})', zIndex: 0}}>
+          <div className={Homestyle.Rollnow} style={{marginLeft: '65vw',marginTop: '40vh',transform: 'scale', zIndex: 0}}>
 
             <h1 className={Homestyle.mainfont} style={{ marginLeft: '-1.5vw',marginTop: '0vh',color: '#F6AA17' ,whiteSpace: 'nowrap',fontSize: '8rem' }}>NOW</h1>
           </div>
@@ -37,9 +37,9 @@ function Home() {
 
         <p>
           <div>
-            <img src={featured01} style={{paddingLeft: '20vw'}}></img>
-            <img src={featured02} style={{paddingLeft: '15vw'}}></img>
-            <img src={featured03} style={{paddingLeft: '15vw'}}></img>
+            <img src={featured01} style={{paddingLeft: '20vw'}} alt={"Design Character with your head"}></img>
+            <img src={featured02} style={{paddingLeft: '15vw'}} alt={"Create your journey"}></img>
+            <img src={featured03} style={{paddingLeft: '15vw'}} alt={"Doing or Create quest"}></img>
           </div>
         </p>
 
@@ -54,8 +54,8 @@ function Home() {
 
         <p>
           <div>
-            <img src={featured04} style={{paddingLeft: '30vw'}}></img>
-            <img src={featured05} style={{paddingLeft: '20vw'}}></img>
+            <img src={featured04} style={{paddingLeft: '30vw'}} alt={"Role play with another People"}></img>
+            <img src={featured05} style={{paddingLeft: '20vw'}} alt={"Roll your Destiny Dice"}></img>
           </div>
         </p>
         
@@ -85,8 +85,8 @@ function Home() {
 
         <div className={Homestyle.villageImageThree}>
           <div>
-            <img src={framecho} style={{paddingLeft: '20vw'}}></img> 
-            <img src={cho} style={{paddingLeft: '0vw'}}></img>
+            <img src={framecho} style={{paddingLeft: '20vw'}} alt={"Guild master frame"}></img>
+            <img src={cho} style={{paddingLeft: '0vw'}} alt={"Guild master"}></img>
           </div>
         
         </div>
