@@ -86,8 +86,8 @@ function Home() {
 
         <div className={Homestyle.villageImageThree}>
           <div>
-            <img src={framecho} style={{paddingLeft: '10vw'}}></img> 
-            <img src={cho} style={{paddingLeft: '10vw'}}></img>
+            <img src={framecho} style={{paddingLeft: '20vw'}}></img> 
+            <img src={cho} style={{paddingLeft: '0vw'}}></img>
           </div>
         
         </div>
