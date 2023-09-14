@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '/logo.svg';
 import Homestyle from './HomeStyle.module.css';
 import featured01 from './Images/featured01.png';
 import featured02 from './Images/featured02.png';
