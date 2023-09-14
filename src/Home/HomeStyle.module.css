@@ -61,12 +61,12 @@
 }
 
 .font{
-  font-family: "Libre Baskerville";
+  font-family: "Libre Baskerville", serif;
     position: absolute;
 }
 .mainfont {
     position: absolute;
-  font-family: "Libre Baskerville";
+  font-family: "Libre Baskerville", serif;
   -webkit-text-stroke: 5px black;
   color: white;
   font-size: 10rem; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
