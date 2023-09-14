@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from '/logo.svg';
 import Homestyle from './HomeStyle.module.css';
-import featured01 from '/workspaces/itag/src/Images/featured01.png';
-import featured02 from '/workspaces/itag/src/Images/featured02.png';
-import featured03 from '/workspaces/itag/src/Images/featured03.png';
-import featured04 from '/workspaces/itag/src/Images/featured04.png';
-import featured05 from '/workspaces/itag/src/Images/featured05.png';
+import featured01 from './Images/featured01.png';
+import featured02 from './Images/featured02.png';
+import featured03 from './Images/featured03.png';
+import featured04 from './Images/featured04.png';
+import featured05 from './Images/featured05.png';
+import cho from './friends_image/cho.png';
+import framecho from './friends_image/framecho.png';
 
 function Home() {
 
@@ -69,7 +71,7 @@ function Home() {
         <p>&nbsp;</p>
 
         <div className={Homestyle.villageImageTwo}>
-            <p className={Homestyle.myfont} style={{color: 'white', fontSize: '3rem' ,paddingLeft: '40vw',marginTop: '0',transform: 'translateY(50vh)' }}>Start your journey</p>
+            <p className={Homestyle.myfont} style={{color: 'white', fontSize: '3rem' ,paddingLeft: '40vw',transform: 'translateY(50vh)' }}>Start your journey</p>
         </div>
 
         <p>&nbsp;</p>
@@ -81,9 +83,14 @@ function Home() {
         </p>
 
         <p>&nbsp;</p>
-        <p>&nbsp;</p>
 
+        <div className={Homestyle.villageImageThree}>
+          <div>
+            <img src={framecho} style={{paddingLeft: '10vw'}}></img> 
+            <img src={cho} style={{paddingLeft: '10vw'}}></img>
+          </div>
         
+        </div>
 
 
     </div>

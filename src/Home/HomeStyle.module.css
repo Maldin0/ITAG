@@ -4,7 +4,7 @@
   position: relative; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('/workspaces/itag/src/Images/village01.png'); /* กำหนดภาพพื้นหลัง */
+  background-image: url('./Images/village01.png'); /* กำหนดภาพพื้นหลัง */
   background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
   background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
@@ -16,15 +16,25 @@
   position: relative; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('/workspaces/itag/src/Images/village02.png'); /* กำหนดภาพพื้นหลัง */
+  background-image: url('./Images/village02.png'); /* กำหนดภาพพื้นหลัง */
   background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
   background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
   z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
   background-color: black;
-  filter: brightness(100%) opacity(60%) drop-shadow(10px 10px 12px gray);;
+  filter: brightness(100%) opacity(60%) drop-shadow(10px 10px 12px gray);
+}
 
-  
+.villageImageThree {
+  position: relative; /* ทำให้รูปพื้นหลังคงที่ */
+  width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('./Images/village03.png'); /* กำหนดภาพพื้นหลัง */
+  background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
+  background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
+  background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
+  z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
+  background-color: black;
   
 }
 
@@ -32,7 +42,7 @@
   position: absolute; /* ทำให้รูปพื้นหลังคงที่ */
   width: 500px; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 150px; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('/workspaces/itag/src/Images/RollNowBorder.png'); /* กำหนดภาพพื้นหลัง */
+  background-image: url('./Images/RollNowBorder.png'); /* กำหนดภาพพื้นหลัง */
   display: flex; flex-direction: column; flex-shrink: 0;
   background-repeat: no-repeat;
   z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
@@ -43,7 +53,7 @@
   position: absolute;
   width: 500px;
   height: 150px;
-  background-image: url('/workspaces/itag/src/Images/featured01.png');
+  background-image: url('./Images/featured01.png');
   display: flex; 
   background-repeat: no-repeat;
   z-index: 0
