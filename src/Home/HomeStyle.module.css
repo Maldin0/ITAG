@@ -1,38 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
 
 .villageImageOne {
-  position: sticky; /* ทำให้รูปพื้นหลังคงที่ */
+  position: relative; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('./Images/village01.png'); /* กำหนดภาพพื้นหลัง */
+  background-image: url('/workspaces/itag/src/Images/village01.png'); /* กำหนดภาพพื้นหลัง */
   background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
   background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
   z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
+  background-color: black;
+}
+
+.villageImageTwo {
+  position: relative; /* ทำให้รูปพื้นหลังคงที่ */
+  width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('/workspaces/itag/src/Images/village02.png'); /* กำหนดภาพพื้นหลัง */
+  background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
+  background-repeat: no-repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
+  background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
+  z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
+  background-color: black;
+  filter: brightness(100%) opacity(60%) drop-shadow(10px 10px 12px gray);;
+
+  
   
 }
 
 .Rollnow {
-  position: sticky; /* ทำให้รูปพื้นหลังคงที่ */
-  width: 20%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
-  height: 20%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('./Images/RollNowBorder.png'); /* กำหนดภาพพื้นหลัง */
-  
-  background-size: cover;
+  position: absolute; /* ทำให้รูปพื้นหลังคงที่ */
+  width: 500px; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 150px; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('/workspaces/itag/src/Images/RollNowBorder.png'); /* กำหนดภาพพื้นหลัง */
+  display: flex; flex-direction: column; flex-shrink: 0;
+  background-repeat: no-repeat;
   z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
-  
+
 }
 
+.featured01{
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  background-image: url('/workspaces/itag/src/Images/featured01.png');
+  display: flex; 
+  background-repeat: no-repeat;
+  z-index: 0
+  
+}
 
 .font{
-  font-family: "Libre Baskerville", serif;
+  font-family: "Libre Baskerville";
+    position: absolute;
 }
 .mainfont {
-  font-family: "Libre Baskerville", serif;
-  -webkit-text-stroke: 4px black;
+    position: absolute;
+  font-family: "Libre Baskerville";
+  -webkit-text-stroke: 5px black;
   color: white;
-  font-size: 150px; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
-  transform: scale(0.5); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
+  font-size: 10rem; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
+  transform: scale(0.4); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
 }
 
 
@@ -42,12 +70,6 @@
   box-sizing: border-box;
   background-color: black;
   z-index: 0 /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้สีพื้นหลังอยู่ข้างหลังสุด */;
-  size: cover; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
-}
-body {
-  background-image: url("/src/Home/Images/village01.png");
-  background-color: #cccccc;
-  
 }
 
 .stroked {
@@ -64,41 +86,3 @@ font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น
 transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 60% ของขนาดปกติ */
 }
 
-
-.Menu {
-    padding: 10px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Menu-Right div {
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.Menu-Right {
-    display: flex;
-    align-items: center;
-}
-
-.Menu-Right > * {
-    margin: 10px;
-}
-
-.Menu-Left_icon {
-    width: 60px;
-    align-items: center;
-}
-
-.SignIn, .LogIn {
-    border: 1px solid black;
-    border-radius: 40px;
-    padding: 5px 10px 5px 10px;
-}
-
-.SignIn {
-    background-color: black;
-    color: white;
-}
