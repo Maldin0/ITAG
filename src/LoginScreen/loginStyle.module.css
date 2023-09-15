@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Metal+Mania&display=swap');
+
+.font{
+  font-family: "Libre Baskerville", serif;
+}
+
+.topfont{
+  font-family: "Metal Mania", serif;
+  font-size: 1rem;
+  transform: scale(3.5);
+}
+
+.myImages {
+  position: fixed; /* ทำให้รูปพื้นหลังคงที่ */
+  width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
+  height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
+  background-image: url('./images/village01.png'); /* กำหนดภาพพื้นหลัง */
+  background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
+  background-repeat: repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
+  background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
+  z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
+}
+
+.scroll{
+  height: 100%; /* กำหนดความสูงเท่ากับความสูงของหน้าจอ */
+  overflow-y: scroll; /* เปิดการใช้งานการเลื่อนแนวตั้งเมื่อเนื้อหามากเกิน */
+  box-sizing: border-box;
+  z-index: 0 /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้สีพื้นหลังอยู่ข้างหลังสุด */;
+}
+
+input, textarea, select {
+  border: 0.4rem solid black;
+  padding: 0.7em;
+  font-size: 15px;
+  line-height: 1.2em;
+  width: 20rem;
+  background: transparent;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0.5em;
+}
