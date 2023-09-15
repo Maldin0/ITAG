@@ -21,15 +21,20 @@ function Home() {
               GUILD
           </h1>
 
-          <h1 className={Homestyle.mainfont} style={{ paddingLeft:'60%',paddingTop: '20vh',color: 'white' ,whiteSpace: 'nowrap'}}>
+          <h1 className={Homestyle.mainfont} style={{ paddingLeft:'60vw',paddingTop: '20vh',color: 'white' ,whiteSpace: 'nowrap'}}>
               Roll your Dice
           </h1>
 
-          <div style={{marginLeft: '65vw',paddingTop: '40vh', zIndex: 0, display:'flex'}}>
+          <div style={{paddingLeft: '65vw',paddingTop: '40vh', zIndex: 0, position:'relative',display:'flex'}}>
+
             <img src={rollnow} ></img>
-            <h1 className={Homestyle.mainfont} style={{ marginLeft: '-1.5vw',marginTop: '0vh',color: '#F6AA17' ,whiteSpace: 'nowrap',fontSize: '8rem' }}>NOW</h1>
+
+            <div style={{ marginTop: '-9vh',marginLeft: '-18vw'}}>
+            <h1 className={Homestyle.mainfont} style={{ color: '#F6AA17' ,whiteSpace: 'nowrap',fontSize: '8rem' }}>NOW</h1>
+            </div>
+            
           </div>
-          
+
       </div>
 
         <p>&nbsp;</p>
