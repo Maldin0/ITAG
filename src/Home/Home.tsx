@@ -7,6 +7,7 @@ import featured04 from './Images/featured04.png';
 import featured05 from './Images/featured05.png';
 import cho from './friends_image/cho.png';
 import framecho from './friends_image/framecho.png';
+import rollnow from './Images/RollNowBorder.png'
 
 function Home() {
 
@@ -14,20 +15,21 @@ function Home() {
     <div className={Homestyle.scroll}> {/*ปรับให้หน้า Home มี scroll bar ให้ทำโค้ดภายใน div นี้*/}
       <div className={Homestyle.villageImageOne}> {/*ใส่รูป*/}
 
-          <h1 className={Homestyle.mainfont} style={{textAlign:'center',marginLeft: '-10vw',marginTop: '0vh'}}>
+          <h1 className={Homestyle.mainfont} style={{textAlign:'center',marginLeft: '-15%',marginTop: '0vh'}}>
               IT<br/>
               ADVENTURER<br/>
               GUILD
           </h1>
 
-          <h1 className={Homestyle.mainfont} style={{ marginLeft:'43vw',marginTop: '25vh',color: 'white' ,whiteSpace: 'nowrap'}}>
+          <h1 className={Homestyle.mainfont} style={{ paddingLeft:'60%',paddingTop: '20vh',color: 'white' ,whiteSpace: 'nowrap'}}>
               Roll your Dice
           </h1>
 
-          <div className={Homestyle.Rollnow} style={{marginLeft: '65vw',marginTop: '40vh',transform: 'scale', zIndex: 0}}>
-
+          <div style={{marginLeft: '65vw',paddingTop: '40vh', zIndex: 0, display:'flex'}}>
+            <img src={rollnow} ></img>
             <h1 className={Homestyle.mainfont} style={{ marginLeft: '-1.5vw',marginTop: '0vh',color: '#F6AA17' ,whiteSpace: 'nowrap',fontSize: '8rem' }}>NOW</h1>
           </div>
+          
       </div>
 
         <p>&nbsp;</p>
