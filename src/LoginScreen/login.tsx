@@ -15,22 +15,31 @@ function login() {
 
                 </div>
 
-                <div className={loginStyle.box}>
-                    <h1 className={loginStyle.font} style={{paddingTop: '5%'}}>IT ADVENTURERS<br/>GUILD</h1>
-                    <div className={loginStyle.inputBox} >
+                <div className={loginStyle.box} style={{display:'flex', flexDirection:'column'}}>
+
+                    <div>
+                        <h1 className={loginStyle.font} >IT ADVENTURERS<br/>GUILD</h1>
+                    </div>
+
+                    <div className={loginStyle.inputBox}>
                         <input placeholder='E-mail/Username' type='input' className={loginStyle.font}></input>
                     </div>
-                    <div className={loginStyle.inputBox} style={{paddingTop: '1.8%' }}>
+
+                    <div className={loginStyle.inputBox} style={{paddingTop: '4%' }}>
                         <input placeholder='Password' type='input' className={loginStyle.font}></input>
                     </div>
-                    <div className={loginStyle.submit} style={{paddingTop: '1%'}}>
+
+                    <div className={loginStyle.submit} style={{ marginTop:'-5%'}}>
                         <button type={'submit'}>Login</button>
                     </div>
-                    <div className={loginStyle.line} ></div>
-                    <div className={loginStyle.supButton}  style={{paddingTop: '2%'}}>
+
+                    <div className={loginStyle.line} style={{marginTop:'3%'}} ></div>
+
+                    <div className={loginStyle.supButton} style={{marginTop:'10%'}} >
                         <button type={'submit'}>Are you new adventurer?</button>
                         <button type={'submit'}>Forgot password?</button>
                     </div>
+
                 </div>
 
             </div>
