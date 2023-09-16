@@ -18,29 +18,42 @@ function Home() {
 
   return (
     <div className={Homestyle.scroll}> {/*ปรับให้หน้า Home มี scroll bar ให้ทำโค้ดภายใน div นี้*/}
-      <div className={Homestyle.villageImageOne}> {/*ใส่รูป*/}
+      
+        <div className={Homestyle.villageImageOne} > {/*ใส่รูป*/}
+          <p>
+            <div className={Homestyle.flexContainer} >
 
-          <h1 className={Homestyle.mainfont} style={{textAlign:'center',marginLeft: '-15%',marginTop: '0vh'}}>
-              IT<br/>
-              ADVENTURER<br/>
-              GUILD
-          </h1>
+              <div style={{ display: 'inline-block',paddingLeft:'10%',paddingTop:'5%'}}>
+                <h1 className={Homestyle.mainfont} style={{textAlign:'center'}} >
+                  IT<br/>
+                  ADVENTURER<br/>
+                  GUILD
+                </h1>
+              </div>
 
-          <h1 className={Homestyle.mainfont} style={{ paddingLeft:'60vw',paddingTop: '20vh',color: 'white' ,whiteSpace: 'nowrap'}}>
-              Roll your Dice
-          </h1>
+              <div className={Homestyle.flexColumn} style={{paddingLeft:'15%',paddingTop:'12%'}} >
+                <div style={{ display: 'inline-block' ,position:'absolute'}}>
+                  <h1 className={Homestyle.mainfont} style={{whiteSpace: 'nowrap'}}>
+                    Roll your Dice
+                  </h1>
+                </div>     
 
-          <div style={{paddingLeft: '65vw',paddingTop: '40vh', zIndex: 0, position:'relative',display:'flex'}}>
+                <div style={{paddingLeft:'6%',marginTop:'10%',position:'absolute' }}>
+                  <img src={rollnow}></img>
+                  <h1 className={Homestyle.mainfont} style={{marginTop:'-35%',marginLeft:'20%', fontSize:'4rem',color:'#F6AA17'}}>
+                    NOW
+                  </h1>
+                </div>
 
-            <img src={rollnow} ></img>
-
-            <div style={{ marginTop: '-9vh',marginLeft: '-19vw'}}>
-              <h1 className={Homestyle.mainfont} style={{ color: '#F6AA17' ,whiteSpace: 'nowrap',fontSize: '8rem' }}>NOW</h1>
+              </div> 
             </div>
-            
-          </div>
 
-      </div>
+            
+            
+
+          </p>
+        
+        </div>
 
         <p>&nbsp;</p>
         <p>&nbsp;</p>
@@ -96,7 +109,7 @@ function Home() {
           <p>
             <div className={Homestyle.flexContainer} style={{paddingLeft:'25%',paddingTop:'5%'}}>
               <div style={{display: 'inline-block'}}> <img src={cho} ></img> </div>
-              <div style={{display: 'inline-block',marginLeft:'-0%',marginTop:'3%',position: 'absolute'}}> <h1 className={Homestyle.mainfont} style={{ textAlign:'center',color:'white'}}>65070051<br></br>Guild master Croissant</h1></div>
+              <div style={{display: 'inline-block',marginLeft:'17%',marginTop:'3%',position: 'absolute'}}> <h1 className={Homestyle.mainfont} style={{ textAlign:'center',color:'white'}}>65070051<br></br>Guild master Croissant</h1></div>
             </div>
           </p>
 
@@ -133,13 +146,15 @@ function Home() {
 
           </p>      
         </div>
-        <p>
-          <div className={Homestyle.flexColumn} style={{color:'white',textAlign:'right',paddingRight:'5%'}}>
-            <div>contact us</div>
+        <p style={{display:'flex',justifyContent:'flex-end'}}>
+          <div className={Homestyle.flexColumn} style={{color:'white',paddingRight:'5%',alignItems:'flex-end'}}>
+            <div>contact us </div>
+            
 
-            <div className={Homestyle.flexContainer}>
+            <div className={Homestyle.flexContainer} style={{alignItems:'center'}}>
+              <p>&nbsp;</p>
               <div style={{ display: 'inline-block'}}><img src={email}></img></div>
-              <div style={{ display: 'inline-block'}}>65070___@kmitl.ac.th</div>
+              <div style={{ display: 'inline-block'}}>65070051@kmitl.ac.th</div>
             </div>
 
           </div>

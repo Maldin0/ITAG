@@ -10,6 +10,8 @@
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
   z-index: 0; /* ตั้งค่า z-index เป็นค่า 0 เพื่อให้รูปอยู่ข้างหลังข้อความ */
   background-color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 .villageImageTwo {
@@ -63,9 +65,16 @@
   font-size: 5rem; /* ปรับขนาดฟ้อนต์ลงเป็น 80% ของขนาดปกติ */
   transform: scale(0.9); /* ปรับขนาดโดยการลดขนาดเป็น 80% ของขนาดปกติ */
 }
-.flex-container {
+.flexContainer {
   display: flex;
   flex-direction: row;
+  
+}
+
+@media (max-width: 1650px) {
+  .flexContainer {
+    flex-direction: column;
+  }
 }
 
 .flexColumn {
