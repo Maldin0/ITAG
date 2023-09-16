@@ -34,7 +34,7 @@ input, textarea, select {
   padding: 0.7em;
   font-size: 15px;
   line-height: 1.2em;
-  width: 20rem;
+  width: 30rem;
   background: transparent;
   -webkit-appearance: none;
   -webkit-border-radius: 35em;
@@ -49,10 +49,10 @@ input, textarea, select {
 
 .box {
   position: relative;
-  width: 85%;
-  height: 60%;
+  width: 48%;
+  height: 50%;
   margin: auto;
-  top: 5%;
+  top: 15%;
   justify-content: center;
   align-items: center;
   border-radius: 10em;
@@ -86,7 +86,7 @@ input, textarea, select {
   border: 2px solid black;
   border-radius: 50px;
   margin: auto;
-  top: 5em;
+  top: 6em;
 }
 
 .supButton {
