@@ -56,44 +56,44 @@ function Home() {
         </div>
 
         <p>&nbsp;</p>
-        <p>&nbsp;</p>
+       
 
         <p> 
           <div className={Homestyle.flexContainer}>
-            <div><h1 className={Homestyle.myfont} style={{color: 'white',paddingLeft: '40vw', display: 'flex',flexWrap: 'nowrap' }}>F e a t u r e d&nbsp; &nbsp; W e b s i t e</h1> </div>
+            <div><h1 className={Homestyle.myfont} style={{color: 'white',paddingLeft: '39.6vw', display: 'flex',flexWrap: 'nowrap' }}>F e a t u r e d&nbsp; &nbsp; W e b s i t e</h1> </div>
           </div>
         </p>
 
         <p>
 
           <div className={Homestyle.flexColumn} style={{ display: 'inline-block' }}>
-            <div><img src={featured01} style={{paddingLeft: '20vw'}} alt={"Design Character with your head"}></img></div>
-            <div className={Homestyle.myfont} style={{ paddingLeft: '20vw', color: 'white' }}>Design character with your hand</div>
+            <div><img src={featured01} style={{paddingLeft: '15.5vw'}} alt={"Design Character with your head"}></img></div>
+            <div className={Homestyle.myfont} style={{ paddingLeft: '15.5vw', color: 'white' }}>Design character with your hand</div>
           </div>
           <div className={Homestyle.flexColumn} style={{ display: 'inline-block' }}>
-            <div><img src={featured02} style={{paddingLeft: '15vw'}} alt={"Design Character with your head"}></img></div>
+            <div><img src={featured02} style={{paddingLeft: '15.5vw'}} alt={"Design Character with your head"}></img></div>
             <div className={Homestyle.myfont} style={{ paddingLeft: '15.5vw', color: 'white' }}>Create your journey</div>
           </div>
 
           <div className={Homestyle.flexColumn} style={{ display: 'inline-block' }}>
-            <div><img src={featured03} style={{paddingLeft: '15vw'}} alt={"Design Character with your head"}></img></div>
+            <div><img src={featured03} style={{paddingLeft: '15.5vw'}} alt={"Design Character with your head"}></img></div>
             <div className={Homestyle.myfont} style={{ paddingLeft: '15.5vw', color: 'white' }}>Doing or Create quest</div>
           </div>
         </p>
         <p>
           <div className={Homestyle.flexColumn} style={{ display: 'inline-block' }}>
-            <div><img src={featured04} style={{paddingLeft: '35vw'}} alt={"Design Character with your head"}></img></div>
-            <div className={Homestyle.myfont} style={{ paddingLeft: '35vw', color: 'white' }}>Role play with another people</div>
+            <div><img src={featured04} style={{paddingLeft: '30vw'}} alt={"Design Character with your head"}></img></div>
+            <div className={Homestyle.myfont} style={{ paddingLeft: '29vw', color: 'white' }}>Role play with another people</div>
           </div>
 
           <div className={Homestyle.flexColumn} style={{ display: 'inline-block' }}>
-            <div><img src={featured05} style={{paddingLeft: '15vw'}} alt={"Design Character with your head"}></img></div>
-            <div className={Homestyle.myfont} style={{ paddingLeft: '15vw', color: 'white' }}>Roll your destiny dice!!</div>
+            <div><img src={featured05} style={{paddingLeft: '15.5vw'}} alt={"Design Character with your head"}></img></div>
+            <div className={Homestyle.myfont} style={{ paddingLeft: '16vw', color: 'white' }}>Roll your destiny dice!!</div>
           </div>
         </p>
         
         <div className={Homestyle.villageImageTwo}>
-            <p className={Homestyle.myfont} style={{color: 'white', fontSize: '3rem' ,paddingLeft: '40vw',transform: 'translateY(50vh)' }}>Start your journey</p>
+            <p className={Homestyle.myfont} style={{color: 'white', fontSize: '3rem' ,paddingLeft: '39.2vw',transform: 'translateY(50vh)' }}>Start your journey</p>
         </div>
        
 
