@@ -123,9 +123,10 @@ transform: scale(0.6); /* ปรับขนาดโดยการลดขน
   
 }
 
-@media (max-width: 1650px) {
+@media (max-width: 1770px) {
   .headerMenu {
-    flex-direction: column;
+    margin-left: 60%;
+    width: 40%;
   }
 }
 
