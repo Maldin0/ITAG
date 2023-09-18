@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
+* {
+  box-sizing: border-box;
+}
 
 
 .villageImageOne {
@@ -13,6 +16,8 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  
 }
 
 .villageImageTwo {
@@ -58,6 +63,7 @@
   font-family: "Libre Baskerville", serif;
   position: absolute;
 }
+
 .mainfont {
     
   font-family: "Libre Baskerville", serif;
@@ -68,10 +74,32 @@
 }
 .flexContainer {
   display: flex;
-  flex-direction: row;
-  
+  flex-wrap: wrap;
 }
 
+.flexitemleft {
+  margin-top: 0%;
+
+  padding: 10px;
+  flex: 50%;
+}
+
+.flexitemright {
+  margin-top: 10%;
+  
+  flex: 50%;
+}
+
+@media (max-width: 800px) {
+  .flexitemleft {
+    flex: 100%;
+  }
+  .flexitemright {
+    flex: 100%;
+    padding-left: 15%;
+    margin-top: -10%;
+  }
+}
 
 .flexColumn {
   display: flex;

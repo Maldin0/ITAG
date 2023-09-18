@@ -36,7 +36,7 @@ function Home() {
 
             <div className={Homestyle.flexContainer} >
 
-              <div style={{ display: 'inline-block',paddingLeft:'10%',paddingTop:'5%'}}>
+              <div className={Homestyle.flexitemleft} >
                 <h1 className={Homestyle.mainfont} style={{textAlign:'center'}} >
                   IT<br/>
                   ADVENTURER<br/>
@@ -44,28 +44,17 @@ function Home() {
                 </h1>
               </div>
 
-              <div className={Homestyle.flexColumn} style={{paddingLeft:'15%',paddingTop:'12%'}} >
-                <div style={{ display: 'inline-block' ,position:'relative'}}>
-                  <h1 className={Homestyle.mainfont} style={{whiteSpace: 'nowrap'}}>
-                    Roll your Dice
-                  </h1>
-                </div>     
-
-                <div style={{paddingLeft:'6%',marginTop:'10%',position:'absolute' }}>
-                  <img src={rollnow}></img>
-                  <h1 className={Homestyle.mainfont} style={{marginTop:'-35%',marginLeft:'20%', fontSize:'4rem',color:'#F6AA17'}}>
+              
+              <div className={Homestyle.flexitemright}>
+                <h1 className={Homestyle.mainfont} style={{whiteSpace: 'nowrap',}}>
+                  Roll your Dice
+                </h1>
+                <img src={rollnow} style={{marginLeft:'15%',position:'relative'}}></img>
+                  <h1 className={Homestyle.mainfont} style={{marginLeft:'22%',transform:'translateY(-200%)',fontSize:'4rem',color:'#F6AA17',position:'relative'}} >
                     NOW
                   </h1>
-                </div>
-
               </div> 
             </div>
-
-            
-            
-
-          
-        
         </div>
 
         <p>&nbsp;</p>
