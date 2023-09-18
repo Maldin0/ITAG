@@ -72,11 +72,6 @@
   
 }
 
-@media (max-width: 1650px) {
-  .flexContainer {
-    flex-direction: column;
-  }
-}
 
 .flexColumn {
   display: flex;
@@ -110,12 +105,13 @@ transform: scale(0.6); /* ปรับขนาดโดยการลดขน
 
 /* เมนูบนขวาของหน้าเว็บ */
 .headerMenu {
-  width: 37%;
+  margin-left: 60%;
+  width: 40%;
   height: 9%;
   display: flex;
   flex-direction: row;
  
-  margin-left: 63%;
+ 
   
 
   border-radius: 2em;
@@ -123,12 +119,7 @@ transform: scale(0.6); /* ปรับขนาดโดยการลดขน
   
 }
 
-@media (max-width: 1770px) {
-  .headerMenu {
-    margin-left: 60%;
-    width: 40%;
-  }
-}
+
 
 .headerMenu a {
   font-family: "Libre Baskerville", serif;
