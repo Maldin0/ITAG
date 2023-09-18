@@ -100,3 +100,9 @@ button {
   background: transparent;
   border: transparent;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}

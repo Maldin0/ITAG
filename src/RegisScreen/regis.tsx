@@ -36,7 +36,7 @@ function regis() {
                     </div>
 
                     <div className={regisStyle.submit} style={{ marginTop:'-5%'}}>
-                        <button type={'submit'}>Next</button>
+                        <button type={'submit'}><a href='#' >Next</a></button>
                     </div>
 
                 </div>
