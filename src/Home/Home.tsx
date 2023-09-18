@@ -25,12 +25,12 @@ function Home() {
           
             
             <div className={Homestyle.headerMenu}  >
-              <div style={{paddingTop:'0%'}}>
+              <div style={{paddingTop:'2%'}}>
                 <div style={{ display: 'inline-block' }}><a href="#"  >Shop</a></div>
                 <div style={{ display: 'inline-block' }}><a href="#" >Quest</a></div>
                 <div style={{ display: 'inline-block' }}><a href="#" >Login</a></div>
                 <div style={{ display: 'inline-block' }}><a href="#" >Sign Up</a></div>
-                <div style={{display: 'inline-block',alignItems:'flex-end'}}><img src={user} style={{width:'110%'}}></img></div>  
+                <div style={{display: 'inline-block',transform: 'translateY(20%)'}}><a href="#" ><img src={user}></img></a></div>  
               </div>
             </div>
 
