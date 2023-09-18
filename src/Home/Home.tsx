@@ -13,14 +13,27 @@ import gong from './friends_image/gong.png';
 import mew from './friends_image/mew.png';
 import pupha from './friends_image/pupha.png';
 import email from './Images/email.png';
+import user from './Images/user.png';
 
 function Home() {
 
   return (
     <div className={Homestyle.scroll}> {/*ปรับให้หน้า Home มี scroll bar ให้ทำโค้ดภายใน div นี้*/}
+        
       
         <div className={Homestyle.villageImageOne} > {/*ใส่รูป*/}
-          <p>
+          
+            
+            <div className={Homestyle.headerMenu}  >
+              <div style={{paddingTop:'0%'}}>
+                <div style={{ display: 'inline-block' }}><a href="#"  >Shop</a></div>
+                <div style={{ display: 'inline-block' }}><a href="#" >Quest</a></div>
+                <div style={{ display: 'inline-block' }}><a href="#" >Login</a></div>
+                <div style={{ display: 'inline-block' }}><a href="#" >Sign Up</a></div>
+                <div style={{display: 'inline-block',alignItems:'flex-end'}}><img src={user} style={{width:'110%'}}></img></div>  
+              </div>
+            </div>
+
             <div className={Homestyle.flexContainer} >
 
               <div style={{ display: 'inline-block',paddingLeft:'10%',paddingTop:'5%'}}>
@@ -32,7 +45,7 @@ function Home() {
               </div>
 
               <div className={Homestyle.flexColumn} style={{paddingLeft:'15%',paddingTop:'12%'}} >
-                <div style={{ display: 'inline-block' ,position:'absolute'}}>
+                <div style={{ display: 'inline-block' ,position:'relative'}}>
                   <h1 className={Homestyle.mainfont} style={{whiteSpace: 'nowrap'}}>
                     Roll your Dice
                   </h1>
@@ -51,7 +64,7 @@ function Home() {
             
             
 
-          </p>
+          
         
         </div>
 

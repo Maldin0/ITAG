@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700');
 
+
 .villageImageOne {
   position: relative; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
@@ -107,3 +108,35 @@ font-size: 70px; /* ปรับขนาดฟ้อนต์ลงเป็น
 transform: scale(0.6); /* ปรับขนาดโดยการลดขนาดเป็น 60% ของขนาดปกติ */
 }
 
+/* เมนูบนขวาของหน้าเว็บ */
+.headerMenu {
+  position: absolute;
+  width: 37%;
+  height: 9%;
+  display: flex;
+  flex-direction: row;
+  
+  right: 0%;
+  justify-content: left;
+  align-items: center;
+  border-radius: 2em;
+  background-color: rgba(43, 40, 40, 0.5);
+  
+}
+
+.headerMenu a {
+  font-family: "Libre Baskerville", serif;
+  text-decoration: none; /* ลบขีดเส้นใต้หน้าเว็บ */
+  font-weight: bold; /* ตัวหนา */
+  margin-left: 60px; /* ระยะห่างระหว่างรายการเมนู */
+  
+  font-size: 150%;
+  color: white;
+}
+
+
+/* ลบขีดเส้นใต้หน้าเว็บเมื่อโฮเวอร์ */
+.headerMenu a:hover {
+  margin-top: 10%;
+  text-decoration: none;
+}
