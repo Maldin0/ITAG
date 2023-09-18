@@ -15,7 +15,7 @@
   position: fixed; /* ทำให้รูปพื้นหลังคงที่ */
   width: 100%; /* กำหนดความกว้างให้เท่ากับหน้าจอ */
   height: 100%; /* กำหนดความสูงให้เท่ากับหน้าจอ */
-  background-image: url('./images/village01.png'); /* กำหนดภาพพื้นหลัง */
+  background-color: antiquewhite; /* กำหนดภาพพื้นหลัง */
   background-size: cover; /* ทำให้ภาพพื้นหลังปรับขนาดเพื่อเต็มจอ */
   background-repeat: repeat; /* ไม่ให้ภาพพื้นหลังทำซ้ำ */
   background-position: center; /* จัดตำแหน่งภาพพื้นหลังกลางหน้าจอ */
@@ -29,50 +29,83 @@
   z-index: 0 /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้สีพื้นหลังอยู่ข้างหลังสุด */;
 }
 
-input, textarea, select {
-  border: 0.3rem solid black;
-  padding: 0.7em;
-  font-size: 1rem;
-  line-height: 1.2em;
-  width: 50%;
-  height: 40%;
-  background: transparent;
-  -webkit-appearance: none;
-  -webkit-border-radius: 35em;
-}
-
-.box h1 {
-  height: 10%;
-  font-size: 2.5em;
-  text-align: center;
-  margin: 15px 0;
-}
-
-.box {
+.profile {
   position: relative;
-  width: 48%;
-  height: 50%;
-  margin: auto;
-  top: 15%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10em;
-  background-color: white;
-}
-
-.box .inputBox {
+  display: grid;
+  background-color: inherit;
+  height: 20em;
   width: 100%;
-  height: 10%;
-  text-align: center;
-  transform: translateY(10%);
 }
 
-.box .submit {
-  text-align: center;
-  transform: translateY(180%);
+.circle {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: darkgray;
+  height: 15em;
+  width: 15em;
+  border-radius: 100%;
+  background-image: url('./images/images.jpg');
 }
 
-.submit button {
+.name {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  font-size: 1.5em;
+}
+
+.classnaja {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  font-size: 1.5em;
+}
+
+.rank {
+  position: absolute;
+  left: 40%;
+  top: 70%;
+  font-size: 1.5em;
+}
+
+.race {
+  position: absolute;
+  left: 65%;
+  top: 50%;
+  font-size: 1.5em;
+}
+
+.rep {
+  position: absolute;
+  left: 65%;
+  top: 70%;
+  font-size: 1.5em;
+}
+
+.line {
+  position: sticky;
+  width: 90%;
+  height: 0.5em;
+  border-radius: 1em;
+  background-color: saddlebrown;
+  top: 50%;
+  left: 5%;
+}
+
+.char {
+  position: relative;
+  font-size: 1.5em;
+  top: 0.5em;
+  left: 13%;
+}
+
+.button {
+  position: relative;
+  text-align: center;
+}
+
+button {
   font-size: 15px;
   width: 17em;
   height: 3em;
@@ -81,31 +114,7 @@ input, textarea, select {
   border-radius: 10em;
 }
 
-.line {
-  position: relative;
-  width: 22em;
-  border: 2px solid black;
-  border-radius: 5px;
-  top: 4.3em;
-}
-
-.supButton {
-  position: relative;
-  text-align: center;
-}
-
-button {
-  font-size: 1em;
-  background: transparent;
-  border: transparent;
-}
-
-.submit a {
+.button a {
   color: white;
-  text-decoration: none;
-}
-
-.supButton a {
-  color: black;
   text-decoration: none;
 }
