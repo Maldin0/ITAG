@@ -8,7 +8,7 @@ function profile() {
         <div className={profileStyle.myImages}>
             <div className={profileStyle.scroll}>
                 <div style={{position: 'relative', display: 'flex'}}>
-                    <img src={line} style={{width: '120em', height: ' 5em',color:'#C8B6A1'}}></img>
+                    <div className={profileStyle.topline}></div>
                     <h1 className={profileStyle.topfont}
                         style={{position: 'absolute', top: '20%', left: '3%', color: 'White'}}>ITAG</h1>
                 </div>
