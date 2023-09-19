@@ -48,52 +48,33 @@
   background-image: url('./images/images.jpg');
 }
 
-.name {
+.username {
   position: absolute;
   left: 40%;
   top: 30%;
   font-size: 1.5em;
 }
 
-.classnaja {
+.email {
   position: absolute;
   left: 40%;
   top: 50%;
   font-size: 1.5em;
 }
 
-.rank {
-  position: absolute;
-  left: 40%;
-  top: 70%;
-  font-size: 1.5em;
-}
-
-.race {
-  position: absolute;
-  left: 65%;
-  top: 50%;
-  font-size: 1.5em;
-}
-
-.rep {
-  position: absolute;
-  left: 65%;
-  top: 70%;
-  font-size: 1.5em;
-}
 
 .line {
-  position: sticky;
+  position: static;
   width: 90%;
   height: 0.5em;
   border-radius: 1em;
   background-color: saddlebrown;
-  top: 50%;
-  left: 5%;
+
+  margin-left: 5%;
 }
 
 .char {
+  font-family: "Libre Baskerville", serif;
   position: relative;
   font-size: 1.5em;
   top: 0.5em;
@@ -106,6 +87,7 @@
 }
 
 button {
+  font-family: "Libre Baskerville", serif;
   font-size: 15px;
   width: 17em;
   height: 3em;

@@ -8,7 +8,7 @@ function profile() {
         <div className={profileStyle.myImages}>
             <div className={profileStyle.scroll}>
                 <div style={{position: 'relative', display: 'flex'}}>
-                    <img src={line} style={{width: '120em', height: ' 5em'}}></img>
+                    <img src={line} style={{width: '120em', height: ' 5em',color:'#C8B6A1'}}></img>
                     <h1 className={profileStyle.topfont}
                         style={{position: 'absolute', top: '20%', left: '3%', color: 'White'}}>ITAG</h1>
                 </div>
@@ -16,11 +16,8 @@ function profile() {
                 <div className={profileStyle.profile} style={{display:'flex', flexDirection:'column'}}>
                     <div className={profileStyle.circle}>
                     </div>
-                    <div className={profileStyle.name}>Name :</div>
-                    <div className={profileStyle.classnaja}>Class :</div>
-                    <div className={profileStyle.rank}>Rank :</div>
-                    <div className={profileStyle.race}>Race :</div>
-                    <div className={profileStyle.rep}>Reputation :</div>
+                    <div className={profileStyle.username}>Username :</div>
+                    <div className={profileStyle.email}>Email :</div>
                 </div>
 
                 <div className={profileStyle.line} >
