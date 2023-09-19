@@ -10,7 +10,7 @@ function Regis() {
         <div className={RegisStyle.myImages}>
             <div className={RegisStyle.scroll}>
                 <div style={{position: 'relative', display: 'flex'}}>
-                    <img src={line} style={{width: '120em', height: ' 5em'}}></img>
+                    <div className={LoginStyle.topline}></div>
                     <h1 className={RegisStyle.topfont} style={{ position: 'absolute', top: '20%', left: '3%', color: 'white' }}>
                         <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className={RegisStyle.topfont}>ITAG</Link>
                     </h1>
@@ -28,13 +28,16 @@ function Regis() {
                         <input placeholder='E-mail' type='input' className={RegisStyle.font}></input>
                     </div>
 
+                    <div className={RegisStyle.inputBox} style={{paddingTop:'3%'}}>
+                        <input placeholder='Username' type='input' className={RegisStyle.font}></input>
+                    </div>
                   
 
-                    <div className={RegisStyle.inputBox} style={{paddingTop: '3%' }}>
+                    <div className={RegisStyle.inputBox} style={{paddingTop: '4%' }}>
                         <input placeholder='Password' type='input' className={RegisStyle.font}></input>
                     </div>
 
-                    <div className={RegisStyle.submit} style={{ marginTop:'-5%'}}>
+                    <div className={RegisStyle.submit} style={{ marginTop:'-4%'}}>
                         <button type={'submit'}><a href='#' >Next</a></button>
                     </div>
 

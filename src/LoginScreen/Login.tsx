@@ -11,7 +11,7 @@ function Login() {
         <div className={LoginStyle.myImages}>
             <div className={LoginStyle.scroll}>
                 <div style={{position: 'relative', display: 'flex'}}>
-                    <img src={line} style={{width: '120em', height: ' 5em'}}></img>
+                    <div className={LoginStyle.topline}></div>
                     <h1 className={LoginStyle.topfont} style={{ position: 'absolute', top: '20%', left: '3%', color: 'white' }}>
                         <Link to="/" style={{ textDecoration: 'none', color: 'white' }} className={LoginStyle.topfont}>ITAG</Link>
                     </h1>

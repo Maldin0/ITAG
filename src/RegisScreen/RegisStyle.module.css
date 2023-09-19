@@ -29,6 +29,13 @@
   z-index: 0 /* ตั้งค่า z-index เป็นค่าติดลบเพื่อให้สีพื้นหลังอยู่ข้างหลังสุด */;
 }
 
+.topline {
+  position: static;
+  width: 100%;
+  height: 4.5em;
+  background-color: #783716;
+}
+
 input, textarea, select {
   border: 0.3rem solid black;
   padding: 0.7em;
