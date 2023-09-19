@@ -24,11 +24,11 @@ function Login() {
                         <h1 className={LoginStyle.font} >IT ADVENTURERS<br/>GUILD</h1>
                     </div>
 
-                    <div className={LoginStyle.inputBox}>
+                    <div className={LoginStyle.inputBox} style={{paddingTop: '2%' }}>
                         <input placeholder='E-mail/Username' type='input' className={LoginStyle.font}></input>
                     </div>
 
-                    <div className={LoginStyle.inputBox} style={{paddingTop: '4%' }}>
+                    <div className={LoginStyle.inputBox} style={{paddingTop: '3%' }}>
                         <input placeholder='Password' type='input' className={LoginStyle.font}></input>
                     </div>
 

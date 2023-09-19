@@ -22,17 +22,15 @@ function Regis() {
                         <h1>Sign up</h1>
                     </div>
 
-                    <div className={RegisStyle.line} style={{marginTop:'0%'}} ></div>
+                    <div className={RegisStyle.line} style={{paddingTop:'0%'}} ></div>
 
-                    <div className={RegisStyle.inputBox}>
+                    <div className={RegisStyle.inputBox} style={{paddingTop:'2%'}}>
                         <input placeholder='E-mail' type='input' className={RegisStyle.font}></input>
                     </div>
 
-                    <div className={RegisStyle.inputBox} style={{paddingTop: '4%' }}>
-                        <input placeholder='Username' type='input' className={RegisStyle.font}></input>
-                    </div>
+                  
 
-                    <div className={RegisStyle.inputBox} style={{paddingTop: '4%' }}>
+                    <div className={RegisStyle.inputBox} style={{paddingTop: '3%' }}>
                         <input placeholder='Password' type='input' className={RegisStyle.font}></input>
                     </div>
 
