@@ -14,6 +14,7 @@ import mew from './friends_image/mew.png';
 import pupha from './friends_image/pupha.png';
 import email from './Images/email.png';
 import user from './Images/user.png';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -26,8 +27,8 @@ function Home() {
             
             <div className={Homestyle.headerMenu}  >
               <div style={{paddingTop:'2%'}}>
-                <div style={{ display: 'inline-block' }}><a href="#" >Login</a></div>
-                <div style={{ display: 'inline-block' }}><a href="#" >Sign Up</a></div>
+                <div style={{ display: 'inline-block' }}><Link to = "/Login">Login</Link></div>
+                <div style={{ display: 'inline-block' }}><Link to = "/Regis">Sign Up</Link></div>
                 <div style={{display: 'inline-block',transform: 'translateY(20%) translateX(-30%)'}}><a href="#" ><img src={user}></img></a></div>  
               </div>
             </div>
