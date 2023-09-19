@@ -26,8 +26,6 @@ function Home() {
             
             <div className={Homestyle.headerMenu}  >
               <div style={{paddingTop:'2%'}}>
-                <div style={{ display: 'inline-block' }}><a href="#"  >Shop</a></div>
-                <div style={{ display: 'inline-block' }}><a href="#" >Quest</a></div>
                 <div style={{ display: 'inline-block' }}><a href="#" >Login</a></div>
                 <div style={{ display: 'inline-block' }}><a href="#" >Sign Up</a></div>
                 <div style={{display: 'inline-block',transform: 'translateY(20%) translateX(-30%)'}}><a href="#" ><img src={user}></img></a></div>  
@@ -49,10 +47,10 @@ function Home() {
                 <h1 className={Homestyle.mainfont} style={{whiteSpace: 'nowrap',}}>
                   Roll your Dice
                 </h1>
-                <img src={rollnow} style={{marginLeft:'15%',position:'relative'}}></img>
-                  <h1 className={Homestyle.mainfont} style={{marginLeft:'22%',transform:'translateY(-200%)',fontSize:'4rem',color:'#F6AA17',position:'relative'}} >
+                  <img src={rollnow} style={{marginLeft:'15%',position:'relative'}} ></img>
+                    <h1 className={Homestyle.mainfont} style={{marginLeft:'22%',transform:'translateY(-200%)',fontSize:'4rem',color:'#F6AA17',position:'relative'}} >
                     NOW
-                  </h1>
+                    </h1>
               </div> 
             </div>
         </div>
