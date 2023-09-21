@@ -1,7 +1,9 @@
-import pgPromise from 'pg-promise';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
+import {IDatabase} from "pg-promise";
 
-const db = pgPromise()({
+const pgPromise = require('pg-promise');
+
+const db : IDatabase<unknown>= pgPromise()({
     host: '161.246.127.24',
     port: 9077,
     database: 'dbitag',
