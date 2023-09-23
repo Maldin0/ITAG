@@ -5,13 +5,18 @@ import User from './User';
 const user = new User('newuser@example.com', 'newpassword');
 
 // Test the login method
-user.login()
+const startTime = performance.now();
+
+user.regis('newuser', 'newuser@example.com', 'newpassword')
     .then(() => {
-        // If login is successful, you can perform further tests or UI integration here
-        console.log('Login successful');
+        const endTime = performance.now();
+        const executionTime = endTime - startTime;
+        console.log(`Registration completed in ${executionTime} milliseconds`);
+        console.log('Registered');
     })
     .catch((error) => {
-        console.error('Error logging in:', error);
+        console.error('Error Registering:', error);
     });
+
 
 // Test the registration method

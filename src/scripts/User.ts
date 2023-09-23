@@ -14,10 +14,10 @@ const db : IDatabase<unknown>= pgPromise()({
 export default class User {
     user_id: number | undefined;
     username: string | undefined;
-    password: string;
     email: string | undefined;
+    password: string;
 
-    constructor(usernameOrEmail: string, password: string) {
+    constructor(usernameOrEmail: string = 'usernameOrEmail', password: string = 'password') {
         if (usernameOrEmail.includes('@')) {
             this.email = usernameOrEmail;
         } else {
@@ -70,8 +70,14 @@ export default class User {
 
     async regis(username: string, email: string, password: string) {
         try {
-            const hashedPassword = await bcrypt.hash(password, 10);
+            const existingUser = await db.oneOrNone('SELECT * FROM accounts WHERE username = $1 OR email = $2', [username, email]);
 
+            if (existingUser) {
+                console.error('User already exists.');
+                return;
+            }
+
+            const hashedPassword = await bcrypt.hash(password, 10);
             await db.tx(async (t) => {
                 const query = 'INSERT INTO accounts (username, email, password, created_on) VALUES ($1, $2, $3, NOW())';
                 const values = [username, email, hashedPassword];
