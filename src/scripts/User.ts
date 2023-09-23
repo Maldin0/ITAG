@@ -99,6 +99,7 @@ export default class User {
         }
     }
 
+
     async getCharacter() {
         try {
             if (!this.user_id) {
