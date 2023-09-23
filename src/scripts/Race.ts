@@ -14,22 +14,26 @@ const db : IDatabase<unknown>= pgPromise()({
 
 export default class Race {
     name: string;
-    traits: Trait[];
-    async constructor(name:string = 'Human', traits:Trait[] = []) {
+    traits: Trait[] = [];
+    constructor(name:string) {
+        this.name = name;
+    }
+
+    async getTrait() {
         try {
-            this.name = name;
-
-            await db.tx(async (t) => {
-                const query = 'SELECT trait_name, trait_detail FROM traits where race_id = $2';
-
-                const traitsData = await t.many(query, [this.name, asd]);
-
-                for (const trait of traitsData) {
-                    this.traits.push(new Trait(trait.trait_name, trait.trait_detail));
+            await db.tx(async (t)=> {
+                const query = 'select * from races r join trait t on (t.race_id = r.race_id) where race_name = $1';
+                const value = [this.name];
+                const traitdata = await t.many(query, value);
+                for(const trait of traitdata)
+                {
+                    const temp = new Trait(trait.trait_name, trait.trait_detail);
+                    this.traits.push(temp)
                 }
             })
-
-
+        }
+        catch (error) {
+            console.error(error)
         }
     }
 }
