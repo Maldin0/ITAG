@@ -1,5 +1,10 @@
 import * as bcrypt from 'bcrypt';
 import {IDatabase} from "pg-promise";
+import Character from "./Character";
+
+
+
+
 
 const pgPromise = require('pg-promise');
 
@@ -11,11 +16,14 @@ const db : IDatabase<unknown>= pgPromise()({
     password: 'YcVOt4I2p6X3YTDXNltyKgxN'
 });
 
+
 export default class User {
+
     user_id: number | undefined;
     username: string | undefined;
     email: string | undefined;
     password: string;
+    char : Character[] | undefined;
 
     constructor(usernameOrEmail: string = 'usernameOrEmail', password: string = 'password') {
         if (usernameOrEmail.includes('@')) {
@@ -90,7 +98,25 @@ export default class User {
             console.log('Error registering user:', error);
         }
     }
-//     TODO: Finish this
-//     TODO: User Validation
-//     TODO: User Session Management
+
+    async getCharacter() {
+        try {
+            if (!this.user_id) {
+                console.error('User is not logged in or user_id is missing.');
+                return;
+            }
+
+            await db.tx(async (t) => {
+                const query = 'SELECT * FROM characters WHERE user_id = $1';
+
+                const charData = await db.manyOrNone(query, this.user_id);
+
+                if (charData && charData.length > 0) {
+                    this.char = charData;
+                }
+            })
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }

@@ -1,3 +1,9 @@
 export default class Skill {
-//     TODO: Finish this
+    name: string;
+    details: string;
+
+    constructor(name: string, details: string) {
+        this.name = name;
+        this.details = details;
+    }
 }
