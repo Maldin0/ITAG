@@ -15,6 +15,7 @@ const db : IDatabase<unknown>= pgPromise()({
 export default class Race {
     name: string;
     traits: Trait[] = [];
+    
     constructor(name:string) {
         this.name = name;
     }

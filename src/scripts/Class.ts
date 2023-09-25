@@ -15,13 +15,11 @@ const db : IDatabase<unknown>= pgPromise()({
 
 export default class Class {
     name: string;
-    features: Feature[];
-    spell: Spell[];
+    features: Feature[] = [];
+    spell: Spell[] = [];
 
-    constructor(name: string, features: Feature[] = [], spell: Spell[] = []) {
+    constructor(name: string) {
         this.name = name;
-        this.features = features;
-        this.spell = spell;
     }
 
     async getfeature() {
