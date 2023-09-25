@@ -1,7 +1,7 @@
 import Race from "./Race";
 import Class from "./Class";
 import Skill from "./Skill";
-import Inventory from "./Inventory";
+import Item from "./Item";
 
 export default class Character {
     char_id : number | undefined;
@@ -10,7 +10,7 @@ export default class Character {
     class : Class | undefined;
     name : string | undefined;
     skills : Skill[] | undefined;
-    bag : Inventory | undefined;
+    bag : Item[] | undefined;
     status : {
         dex: number;
         wis: number;
@@ -22,5 +22,7 @@ export default class Character {
     } | undefined;
     background : string | undefined;
     active : boolean | undefined;
+
+
 
 }
