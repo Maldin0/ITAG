@@ -2,22 +2,20 @@ import Race from "./Race";
 import Class from "./Class";
 import Skill from "./Skill";
 import Item from "./Item";
+
+import DBConnection from "./DBConnection";
 import {IDatabase} from "pg-promise";
-import { dblClick } from "@testing-library/user-event/dist/click";
 
-const pgPromise = require('pg-promise');
 
-const db : IDatabase<unknown>= pgPromise()({
-    host: '161.246.127.24',
-    port: 9077,
-    database: 'dbitag',
-    user: 'clmtbmrw30079bsmnfdwi4ovp',
-    password: 'YcVOt4I2p6X3YTDXNltyKgxN'
-});
 
 
 export default class Character {
-    char_id : number;
+    private _char_id! : number;
+    set char_id(value: number) {
+        this._char_id = value;
+    }
+    private db: IDatabase<unknown>;
+
     user_id : number | undefined;
     race : Race | undefined;
     class : Class | undefined;
@@ -45,22 +43,23 @@ export default class Character {
     background : string | undefined;
     active : boolean | undefined;
     
-    constructor(char_id: number,user_id: number){
+    constructor(user_id: number){
+        this.db = DBConnection.getInstance().getDB();
         this.user_id = user_id;
-        this.char_id = char_id;
     }
 
-    async createChar(race_id: number,class_id: number,background: string,dex: number,wis: number,int: number,str: number,cha: number,con: number,hp: number,is_active: boolean,gold: number){
+    async createChar(race_id: number,class_id: number,name: string, background: string,dex: number,wis: number, int: number, str: number, cha: number, con: number, hp: number, gold: number){
         if(!this.user_id){
             console.log('User not found.')
             return
         }
         try{
-            await db.tx(async (t)=>{
-                const query = 'insert into characters(user_id,race_id,class_id,name,background,dex,wis,int,str,cha,con,hp,is_active,gold) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) returning cha_id'
-                const value = [this.user_id,race_id,class_id,background,dex,wis,int,str,cha,con,hp,is_active,gold] 
+            await this.db.tx(async (t)=>{
+                const query = 'insert into characters(user_id,race_id,class_id,name,background,dex,wis,int,str,cha,con,hp,is_active,gold) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12, true ,$13) returning cha_id'
+                const value = [this.user_id,race_id, class_id, name, background,dex,wis,int,str,cha,con,hp, gold]
                 const Chadata = await t.one(query,value)
-                await t.none("insert into inventories(item_id,cha_id) value(1,$1)",[Chadata])  
+                this.active = true;
+                this._char_id = Chadata.cha_id;
                 console.log('Create character successfully.')
             })
         }
@@ -69,45 +68,45 @@ export default class Character {
         }
     }
 
-    async getChar(char_id: number){
+    async getChar(){
         if(!this.user_id){
             console.log('User not found.')
             return
         }
         try{
-            await db.tx(async (t)=>{
+            await this.db.tx(async (t)=>{
                 const query = 'select name,gold,background,is_active from characters where cha_id = $1' 
-                const Chadata = await t.one(query,[char_id])
+                const Chadata = await t.one(query,[this.char_id])
                 this.name = Chadata.name
                 this.gold = Chadata.gold
                 this.background = Chadata.background
                 this.active = Chadata.is_active
 
                 const query2 = 'select race_name from characters natural join races where cha_id = $1'
-                const Racedata = await t.one(query2,[char_id])
+                const Racedata = await t.one(query2,[this.char_id])
                 this.race = new Race(Racedata.race_name)
-                this.race.getTrait()
+                await this.race.getTrait()
 
                 const query3 = 'select class_name from characters natural join classes where cha_id = $1'
-                const Classdata = await t.one(query3,[char_id])
+                const Classdata = await t.one(query3,[this.char_id])
                 this.class = new Class(Classdata.class_name)
-                this.class.getfeature()
-                this.class.getspell()
+                await this.class.getfeature()
+                await this.class.getspell()
 
                 const query4 = 'select skill_name,skill_detail from characters natural join  skills_in_cha natural join skills where cha_id = $1'
-                const Skilldata = await t.many(query4,[char_id])
+                const Skilldata = await t.manyOrNone(query4,[this.char_id])
                 for(const skill of Skilldata){
                     this.skills.push(new Skill(skill.skill_name,skill.skill_detail))
                 }
 
                 const query5 = 'select item_name,item_detail from characters natural join  inventories natural join items where cha_id = $1'
-                const Itemdata = await t.many(query5,[char_id])
+                const Itemdata = await t.manyOrNone(query5,[this.char_id])
                 for(const item of Itemdata){
                     this.bag.push(new Item(item.item_name,item.item_detail))
                 }
 
                 const query6 = 'select dex,wis,int,str,cha,con,hp from characters where cha_id = $1'
-                const Statdata = await t.one(query6,[char_id])
+                const Statdata = await t.one(query6,[this.char_id])
                 this.status.dex = Statdata.dex
                 this.status.wis = Statdata.wis
                 this.status.int = Statdata.int
@@ -122,5 +121,13 @@ export default class Character {
         catch(error){
             console.error(error)
         }
+    }
+
+    get char_id() {
+        return this._char_id
+    }
+
+    toString() {
+        // TODO: Convert to string
     }
 }   

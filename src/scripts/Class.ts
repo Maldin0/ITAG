@@ -1,31 +1,25 @@
 import Feature from './Feature';
 import {IDatabase} from "pg-promise";
 import Spell from "./Spell";
+import DBConnection from "./DBConnection";
 
 
-const pgPromise = require('pg-promise');
-
-const db : IDatabase<unknown>= pgPromise()({
-    host: '161.246.127.24',
-    port: 9077,
-    database: 'dbitag',
-    user: 'clmtbmrw30079bsmnfdwi4ovp',
-    password: 'YcVOt4I2p6X3YTDXNltyKgxN'
-});
 
 export default class Class {
+    private db : IDatabase<unknown>;
     name: string;
     features: Feature[] = [];
     spell: Spell[] = [];
 
     constructor(name: string) {
+        this.db = DBConnection.getInstance().getDB();
         this.name = name;
     }
 
     async getfeature() {
         try {
-            await db.tx(async (t)=> {
-                const query = 'select * from classes c join feature f on (c.class_id = f.class_id) where class_name = $1'
+            await this.db.tx(async (t)=> {
+                const query = 'select * from classes c join features f on (c.class_id = f.class_id) where class_name = $1'
                 const value = [this.name, this.features]
                 const featuredata = await t.many(query, value)
                 for(const fea of featuredata)
@@ -43,8 +37,8 @@ export default class Class {
 
     async getspell(){
         try {
-            await db.tx(async (t)=>{
-                const  query = 'select * from classes c join spells s on (c.classes = s.classes) where class_name = $1'
+            await this.db.tx(async (t)=>{
+                const  query = 'select * from classes c join spells s on (c.class_id = s.class_id) where class_name = $1'
                 const value = [this.name, this.spell]
                 const spelldata = await t.many(query, value)
                 for(const spel of spelldata)

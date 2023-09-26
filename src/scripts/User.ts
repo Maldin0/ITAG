@@ -1,31 +1,30 @@
 import * as bcrypt from 'bcrypt';
-import {IDatabase} from "pg-promise";
+import DBConnection from "./DBConnection";
 import Character from "./Character";
+import {IDatabase} from "pg-promise";
 
-
-
-
-
-const pgPromise = require('pg-promise');
-
-const db : IDatabase<unknown>= pgPromise()({
-    host: '161.246.127.24',
-    port: 9077,
-    database: 'dbitag',
-    user: 'clmtbmrw30079bsmnfdwi4ovp',
-    password: 'YcVOt4I2p6X3YTDXNltyKgxN'
-});
 
 
 export default class User {
+    get char(): Character[] {
+        return this._char;
+    }
+    get user_id(): number {
+        return this._user_id;
+    }
 
-    user_id: number | undefined;
+    set user_id(value: number) {
+        this._user_id = value;
+    }
+    private db: IDatabase<unknown>;
+    private _user_id!: number;
     username: string | undefined;
     email: string | undefined;
     password: string;
-    char : Character[] | undefined;
+    private _char : Character[]=[];
 
     constructor(usernameOrEmail: string = 'usernameOrEmail', password: string = 'password') {
+        this.db = DBConnection.getInstance().getDB();
         if (usernameOrEmail.includes('@')) {
             this.email = usernameOrEmail;
         } else {
@@ -36,7 +35,7 @@ export default class User {
 
     async login() {
         try {
-            await db.tx(async (t) => {
+            await this.db.tx(async (t) => {
                 let query;
                 let values;
 
@@ -61,10 +60,10 @@ export default class User {
                 const passwordMatch = await bcrypt.compare(this.password, userData.password);
 
                 if (passwordMatch) {
-                    this.user_id = userData.user_id;
+                    this._user_id = userData.user_id;
                     this.email = userData.email;
 
-                    await t.none('UPDATE accounts SET last_login = NOW() WHERE user_id = $1', [userData.user_id]);
+                    await t.none('UPDATE accounts SET last_login = NOW() WHERE user_id = $1', [userData._user_id]);
 
                     console.log('Login successful.');
                 } else {
@@ -78,7 +77,7 @@ export default class User {
 
     async regis(username: string, email: string, password: string) {
         try {
-            const existingUser = await db.oneOrNone('SELECT * FROM accounts WHERE username = $1 OR email = $2', [username, email]);
+            const existingUser = await this.db.oneOrNone('SELECT * FROM accounts WHERE username = $1 OR email = $2', [username, email]);
 
             if (existingUser) {
                 console.error('User already exists.');
@@ -86,7 +85,7 @@ export default class User {
             }
 
             const hashedPassword = await bcrypt.hash(password, 10);
-            await db.tx(async (t) => {
+            await this.db.tx(async (t) => {
                 const query = 'INSERT INTO accounts (username, email, password, created_on) VALUES ($1, $2, $3, NOW())';
                 const values = [username, email, hashedPassword];
 
@@ -103,19 +102,21 @@ export default class User {
 
     async getCharacter() {
         try {
-            if (!this.user_id) {
+            if (!this._user_id) {
                 console.error('User is not logged in or user_id is missing.');
                 return;
             }
 
-            await db.tx(async (t) => {
-                const query = 'SELECT cha_id FROM characters WHERE user_id = $1';
+            await this.db.tx(async (t) => {
+                const query = 'SELECT user_id,cha_id FROM characters WHERE user_id = $1';
 
-                const charData = await db.manyOrNone(query, this.user_id);
+                const charData = await this.db.manyOrNone(query, this._user_id);
                 
                 if (charData && charData.length > 0) {                 
-                    for(const char of charData){
-                        char.push(new Character(char.cha_id,char.user_id))
+                    for(const cha of charData){
+                        const temp = new Character(cha.user_id);
+                        temp.char_id = cha.cha_id;
+                        this._char.push(temp);
                     }
                     console.log('Chardata load successfully.')
                 }
@@ -127,8 +128,4 @@ export default class User {
             console.error(error);
         }
     }
-
-
-    
-    
 }
