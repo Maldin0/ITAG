@@ -2,17 +2,18 @@
 import User from './User';
 
 // Create an instance of the User class and test its methods
-const user = new User('newuser@example.com', 'newpassword');
+const user = new User('65070014@kmitl.ac.th', 'inwsussus550');
 
 // Test the login method
 const startTime = performance.now();
 
-user.regis('newuser', 'newuser@example.com', 'newpassword')
+user.login()
     .then(() => {
-        const endTime = performance.now();
-        const executionTime = endTime - startTime;
-        console.log(`Registration completed in ${executionTime} milliseconds`);
-        console.log('Registered');
+        console.log('Logged in');
+        user.getCharacter()
+        .then(() =>{
+            console.log('get character complete.')
+        })
     })
     .catch((error) => {
         console.error('Error Registering:', error);

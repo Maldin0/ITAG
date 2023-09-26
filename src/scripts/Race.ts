@@ -31,6 +31,7 @@ export default class Race {
                     const temp = new Trait(trait.trait_name, trait.trait_detail);
                     this.traits.push(temp)
                 }
+                console.log('Traitdata load successfully.')
             })
         }
         catch (error) {

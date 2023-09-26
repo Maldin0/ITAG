@@ -17,7 +17,7 @@ const db : IDatabase<unknown>= pgPromise()({
 
 
 export default class Character {
-    char_id : number | undefined;
+    char_id : number;
     user_id : number | undefined;
     race : Race | undefined;
     class : Class | undefined;
@@ -45,17 +45,23 @@ export default class Character {
     background : string | undefined;
     active : boolean | undefined;
     
-    constructor(user_id: number){
+    constructor(char_id: number,user_id: number){
         this.user_id = user_id;
+        this.char_id = char_id;
     }
 
     async createChar(race_id: number,class_id: number,background: string,dex: number,wis: number,int: number,str: number,cha: number,con: number,hp: number,is_active: boolean,gold: number){
+        if(!this.user_id){
+            console.log('User not found.')
+            return
+        }
         try{
             await db.tx(async (t)=>{
                 const query = 'insert into characters(user_id,race_id,class_id,name,background,dex,wis,int,str,cha,con,hp,is_active,gold) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) returning cha_id'
                 const value = [this.user_id,race_id,class_id,background,dex,wis,int,str,cha,con,hp,is_active,gold] 
                 const Chadata = await t.one(query,value)
                 await t.none("insert into inventories(item_id,cha_id) value(1,$1)",[Chadata])  
+                console.log('Create character successfully.')
             })
         }
         catch(error){
@@ -64,6 +70,10 @@ export default class Character {
     }
 
     async getChar(char_id: number){
+        if(!this.user_id){
+            console.log('User not found.')
+            return
+        }
         try{
             await db.tx(async (t)=>{
                 const query = 'select name,gold,background,is_active from characters where cha_id = $1' 
@@ -105,9 +115,9 @@ export default class Character {
                 this.status.cha = Statdata.cha
                 this.status.con = Statdata.con
                 this.status.hp = Statdata.hp
-
-
+                console.log('Get character successfully.')
             })
+            
         }
         catch(error){
             console.error(error)

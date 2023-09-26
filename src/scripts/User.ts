@@ -101,26 +101,32 @@ export default class User {
 
 
 
-    // async getCharacter() {
-    //     try {
-    //         if (!this.user_id) {
-    //             console.error('User is not logged in or user_id is missing.');
-    //             return;
-    //         }
+    async getCharacter() {
+        try {
+            if (!this.user_id) {
+                console.error('User is not logged in or user_id is missing.');
+                return;
+            }
 
-    //         await db.tx(async (t) => {
-    //             const query = 'SELECT * FROM characters WHERE user_id = $1';
+            await db.tx(async (t) => {
+                const query = 'SELECT cha_id FROM characters WHERE user_id = $1';
 
-    //             const charData = await db.manyOrNone(query, this.user_id);
-
-    //             if (charData && charData.length > 0) {
-    //                 this.char = charData;
-    //             }
-    //         })
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
+                const charData = await db.manyOrNone(query, this.user_id);
+                
+                if (charData && charData.length > 0) {                 
+                    for(const char of charData){
+                        char.push(new Character(char.cha_id,char.user_id))
+                    }
+                    console.log('Chardata load successfully.')
+                }
+                else{
+                    console.log('this user has no character.')
+                }
+            })
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
 
     

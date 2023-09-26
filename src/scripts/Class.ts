@@ -33,6 +33,7 @@ export default class Class {
                     const temp = new Feature(fea.features_name, fea.features_detail)
                     this.features.push(temp)
                 }
+                console.log('getfeature load successfully.')
             })
         }
         catch (error) {
@@ -51,6 +52,7 @@ export default class Class {
                     const temp = new Spell(spel.spell_name, spel.interval_time, spel.duration, spel.range, spel.details)
                     this.spell.push(temp)
                 }
+                console.log('getspell load successfully.')
             })
         }
         catch (error) {
