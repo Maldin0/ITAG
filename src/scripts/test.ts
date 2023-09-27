@@ -11,14 +11,16 @@ user.login()
     .then(() => {
         console.log('Logged in');
         user.getCharacter()
-            .then(()=>{
+            .then(async ()=>{
                 console.log('got character');
                 const char = user.char
                 for (const cha of char) {
-                    cha.getChar()
-                        .then(()=>{
-                            console.log('got chadata')
-                        })
+                    if (cha instanceof Character) {
+                        cha.getChar()
+                            .then(() => {
+                                cha.toString();
+                            })
+                    }
                 }
         })
     })

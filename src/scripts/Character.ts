@@ -127,7 +127,28 @@ export default class Character {
         return this._char_id
     }
 
-    toString() {
+    async toString() {
         // TODO: Convert to string
+        await this.getChar()
+
+        const characterInfo = `Character ID: ${this.char_id}
+        User ID: ${this.user_id}
+        Name: ${this.name}
+        Race: ${this.race?.name || 'N/A'}
+        Class: ${this.class?.name || 'N/A'}
+        Background: ${this.background || 'N/A'}
+        Gold: ${this.gold || 0}
+        Skills: ${this.skills.map(skill => `${skill.name}: ${skill.details}`).join(', ') || 'N/A'}
+        Items in Bag: ${this.bag.map(item => `${item.name}: ${item.detail}`).join(', ') || 'N/A'}
+        Dexterity: ${this.status.dex || 0}
+        Wisdom: ${this.status.wis || 0}
+        Intelligence: ${this.status.int || 0}
+        Strength: ${this.status.str || 0}
+        Charisma: ${this.status.cha || 0}
+        Constitution: ${this.status.con || 0}
+        HP: ${this.status.hp || 0}`;
+
+        return characterInfo
+        //return this.user_id, this.race, this.class, this.name, this.gold, this.skills, this.bag, this.status.cha, this.status.con, this.status.wis, this.status.str, this.status.int, this.status.dex, this.status.hp
     }
 }   
