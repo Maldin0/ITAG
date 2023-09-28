@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs-react';
 import DBConnection from "./DBConnection";
 import Character from "./Character";
 import {IDatabase} from "pg-promise";
@@ -110,7 +110,7 @@ export default class User {
             await this.db.tx(async (t) => {
                 const query = 'SELECT user_id,cha_id FROM characters WHERE user_id = $1';
 
-                const charData = await this.db.manyOrNone(query, this._user_id);
+                const charData = await t.manyOrNone(query, this._user_id);
                 
                 if (charData && charData.length > 0) {                 
                     for(const cha of charData){

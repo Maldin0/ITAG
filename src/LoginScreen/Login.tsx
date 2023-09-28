@@ -1,11 +1,15 @@
 import React from 'react';
 import LoginStyle from './LoginStyle.module.css'  ;
-import line from './images/line.png';
-import {log} from "util";
+
 import { Link } from 'react-router-dom';
-import RegisStyle from "../RegisScreen/RegisStyle.module.css";
+import User from '../scripts/User';
+
+interface LoginProps {
+    user: User;
+}
 
 function Login() {
+
     return (
 
         <div className={LoginStyle.myImages}>
